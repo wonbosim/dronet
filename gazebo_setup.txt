@@ -1,0 +1,67 @@
+# 우분투 가상환경에서 gazebo와 아두파일럿 ros 기타 등등 #
+
+prepare to work : on notebook
+1. ubutu download
+ubuntu 18.04 lts download on 검색 창에
+website - https://releases.ubuntu.com/18.04/
+64-bit PC (AMD64) desktop image 다운로드
+
+2. virual enviranment make 다운로드 및 설치
+검색창에 oracle vm virtualbox 입력 
+홈페이지 이동 www.virtualbox.org 
+https://www.virtualbox.org/
+downloads 페이지로 이동
+virtualbox 6.1.18 platform packages 에서 운영체계에 맞는 것 선택한다 
+윈도우 시 windows hosts 선택하면 바로 다운로드 창이 열린다
+적당한 폴더 선태 후 다운로드하면  VirtualBox-6.1.18-142142-Win.exe 실행파일이 저장된다.
+파일을 실행하여 설치를 한다. 특별히 다른 선택을 하지 않고 권장되어 있는 것으로 한다.
+
+가상환경에서 다운로드한 우분투 시동 이미지 로딩 및 설치
+
+1. python3 opencv
+# sudo aptd install python3-opencv=3.2.0+dfsg-4ubuntu0.1
+
+2.  gazebo9
+# sudo apt install gazebo9 libgazebo9-dev
+
+설치 후 가제보 실행
+# gazebo
+
+가제보 실행 시 에러 발생 시
+sudo nano .ignition/fuel/config.yaml 열고
+
+fuel.ignition.robotics.org 로 수정
+
+3. ardupilot - gazebo
+# git clone https://github.com/dronedojo/ardupilot_gazebo
+
+cd ardupilot_gazebo
+mkdir build
+cd build
+
+sudo apt install cmake
+
+cmake ..
+make -j4
+sudo make install
+
+
+sudo gedit ~/.bashrc 실행하여 제일 하단으로 이동하여 추가한다.
+
+export GAZEBO_RESOURCE_PATH=
+export GAZEBO_MODEL_PATH=
+
+source /usr/share/gazebo-9/setup.sh
+추가 후 저장하고 나온다
+
+6.ROS melodic 설치
+
+키 설치후
+# sudo apt-update 실행
+
+ros 설치 후
+sudo gedit ~/.bashrc 실행하여 제일 하단으로 이동하여 추가한다.
+source /opt/ros/melodic/setup.bash 
+추가 후 저장하고 나온다.
+
+
