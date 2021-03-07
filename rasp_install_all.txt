@@ -1,0 +1,34 @@
+- raspberry pi install all the things
+
+	sudo apt-get update
+	sudo apt-get upgrade
+	sudo apt-get install python-pip
+	sudo apt-get install python-dev
+	sudo pip install future
+	sudo apt-get install screen python-wxgtk4.0 python-lxml
+	sudo pip install pyserial
+	sudo pip install dronekit
+	sudo pip install MAVProxy
+
+- Set up RPi for UART communication
+	raspi-config then disable for console, enable it for serial port hardware
+	go into /boot/config.txt and add "dtoverlay=disable-bt"
+	if ttyAMA0 isn't in /dev, enable_uart=1 in /boot/config
+
+# sudo raspi-config
+ls /dev/ttyAMA0
+sudo nano /boot/config.txt
+
+픽스호크와 연결 명령
+# mavproxy.py --master=/dev/ttyAMA0
+
+sudo apt-get updatedi
+
+sudo apt-get upgrade 
+
+sudo apt-get install libatlas-base-dev 
+
+
+step raspberry pi and ros setup
+- ubntu download
+uvuntu 18.04.5 lts : do you download raspberry pi 3(hard-float) preinstalled server image
