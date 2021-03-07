@@ -1,11 +1,12 @@
-우분투 가상환경에서 gazebo와 아두파일럿 ros 기타 등등
+# 우분투 가상환경에서 gazebo와 아두파일럿 ros 기타 등등 #
 
-ubutu download
+prepare to work : on notebook
+1. ubutu download
 ubuntu 18.04 lts download on 검색 창에
-https://releases.ubuntu.com/18.04/
+website - https://releases.ubuntu.com/18.04/
 64-bit PC (AMD64) desktop image 다운로드
 
-가상환경 다운로드 및 설치
+2. virual enviranment make 다운로드 및 설치
 검색창에 oracle vm virtualbox 입력 
 홈페이지 이동 www.virtualbox.org 
 https://www.virtualbox.org/
